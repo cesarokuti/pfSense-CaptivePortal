@@ -1,139 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- By: Cesar Okuti - Security DevOps -->
-<link rel="File-List" href="index_arquivos/filelist.xml">
-<link rel="Edit-Time-Data" href="index_arquivos/editdata.mso">
-<link rel="themeData" href="index_arquivos/themedata.thmx">
-<link rel="colorSchemeMapping" href="index_arquivos/colorschememapping.xml">
-<title>HotSpot Security DevOps</title>
-
-<style type="text/css">
-body{ margin:0px 0px 0px 0px; font-family:Verdana, Geneva, sans-serif; background-color:#E8E8E8;}
-#title{
-   text-align:center;
-   font-size:130%;
-   color:#303030;
-   text-transform:uppercase;
-   padding-top:25px;
-}
-#faixao{ width:100%;
-       height:300px;
-       background-color:#000099;
-       position:absolute;
-       top:20%;
-}
-#faixa{ width:100%;
-       height:250px;
-       background-color:#F0F0F0;
-       margin-top:25px;
-}
-#alinhamento{
-   width:500px;
-   height:260px;
-   margin:0 auto;
-}
-#rodape{ text-align:center;
-       font-size:70%;
-       padding-top:5px;
-       color:#FFF;
-}
-#formulario{
-   width:90px;
-   height:200px;
-   float:right;
-   padding-top:25px;
-   font-size:90%;
-   color:#000099;
-}
-#imagem{ 
-   background:url(captiveportal-logo.png)  left no-repeat; 
-   margin-left:1px; 
-   width:375px;
-   height:200px;
-   float:left;
-   padding-top:1px;
-   font-size:90%;
-   color:#ff9900;
-}
-.input{
-   width:150px;
-   padding:5px 5px 5px 5px;
-   border:1px solid #000099;
-   margin-bottom:9px;
-   color:#000099;
-}
-.conectar{
-   width:100px;
-   height:30px;
-   cursor:pointer;
-   margin-top:15px;
-   color:#000099;
-   text-transform:uppercase;
-   font-size:80%;
-   font-weight:bold;
-   background-color:#f5f0f0;
-   border:1px solid #000099;   
-}
-.conectar:hover{
-  background-color:#000099;
-  color:#000099;
-}
-.voucher{
-  border:1px solid #000099;
-  width:113px;background-color:#FFF;
-}
-.lbvoucher{
-  font-size:90%;
-  color:#000099;
-}
-#mensagem{
-   text-align:center;
-   font-size:80%;
-   color:#333;
-   padding-top:15px;
-}
-</style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cabesp | Captive Portal</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body lang="PT-BR">
-<div id="title">HotSpot Administração Total do pfSense</div>
-<div id="faixao">
-<div id="faixa">
-   <div id="alinhamento">
-    
-    <div id="imagem"></div>
-   <div id="formulario">
-       <form method="post" action="$PORTAL_ACTION$">
-      
-            <label>Usuário *</label>  
-               <input name="auth_user" type="text" class="input" title="LOGIN de acesso ao LABORATÓRIO da unidade">
-             
-            <label>Senha *</label>  
-               <input name="auth_pass" type="password" class="input" title="SENHA de acesso ao LABORATÓRIO da unidade">
-          
-           
-		<label class="lbvoucher">Voucher:</label>
-		<input name="auth_voucher" type="text" title="CÓDIGO do VOUCHER para acesso temporário a internet" class="voucher">
-           
-      
-            <input name="redirurl" value="$PORTAL_REDIRURL$" type="hidden">
-            <input name="accept" value="Conectar" type="submit" class="conectar">
-          
-        </form>
-     </div>
-    
-    
-  </div>
-</div>  
-<div id="rodape">Security DevOps  &copy;2016 - Livro Administração total do pfSense</div>
-<div id="mensagem">
-     Todos os acessos são registrados e os registros estarão à disposição das autoridades, caso solicitado. 
-
-     Navegue com responsabilidade.
-  </div>
-</div>
+<body>
+    <div class="card card-container">
+      <img id="profile-img" class="profile-img-card" src="logo.jpg" />
+      <form class="form-signin" action="$PORTAL_ACTION$" method="POST">
+        <input type="text" id="Usuario" name="auth_user" class="form-control" placeholder="Usuario" required autofocus>
+        <input type="password" id="Senha" name="auth_pass" class="form-control" placeholder="Senha" required>
+	<input type="text" id="Voucher" name="auth_voucher" class="form-control" placeholder="Voucher">
+	<a href="http://pfsense.cabesp.com.br">Troque sua senha</a>
+	<br><br>
+        <input name="redirurl" value="$PORTAL_REDIRURL$" type="hidden">
+	<input name="zone" value="$PORTAL_ZONE$" type="hidden">
+        <input class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="accept" Value="Conectar">
+      </form>
+    </div>
 </body>
 </html>
