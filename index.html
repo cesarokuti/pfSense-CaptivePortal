@@ -14,13 +14,13 @@
     <div class="card card-container">
       <img id="profile-img" class="profile-img-card" src="logo.png" />
       <form class="form-signin" action="$PORTAL_ACTION$" method="POST">
+	<input name="redirurl" value="$PORTAL_REDIRURL$" type="hidden">
+	<input name="zone" value="$PORTAL_ZONE$" type="hidden">
         <input type="text" id="Usuario" name="auth_user" class="form-control" placeholder="Usuario" required autofocus>
         <input type="password" id="Senha" name="auth_pass" class="form-control" placeholder="Senha" required>
 	<input type="text" id="Voucher" name="auth_voucher" class="form-control" placeholder="Voucher">
 	<a href="http://pfsense.cabesp.com.br">Troque sua senha</a>
 	<br><br>
-        <input name="redirurl" value="$PORTAL_REDIRURL$" type="hidden">
-	<input name="zone" value="$PORTAL_ZONE$" type="hidden">
         <input class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="accept" Value="Conectar">
       </form>
     </div>
